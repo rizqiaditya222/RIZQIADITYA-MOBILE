@@ -1,13 +1,9 @@
 package com.kotlin.rizqiaditya.domain.usecase.message
 
 import com.kotlin.rizqiaditya.domain.repository.MessageRepository
-import javax.inject.Inject
 
-class SendMessageUseCase @Inject constructor(
+class SendMessageUseCase constructor(
     private val repository: MessageRepository
 ) {
-    suspend operator fun invoke(message: String) {
-        repository.sendMessage(message)
-    }
+    suspend operator fun invoke(message: String) = repository.sendMessage(message)
 }
-

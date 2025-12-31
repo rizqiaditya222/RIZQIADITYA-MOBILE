@@ -9,10 +9,6 @@ data class Project(
     val githubRepos: List<GithubRepoDto>?,
     val deploymentUrl: String?,
     val techStack: List<String>,
+    val description: String?,
     val createdAt: String
-)
-
-data class GithubRepo(
-    val name: String,
-    val url: String
 )

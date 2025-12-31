@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.ksp)
-    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -54,9 +53,16 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
     implementation(libs.okhttp)
-    implementation(libs.hilt.android)
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.12")
-    ksp(libs.hilt.compiler)
+
+    // Navigation for Compose
+    implementation("androidx.navigation:navigation-compose:2.6.0")
+    // ViewModel support in Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    // Material icons (Filled/Outlined/etc.)
+    implementation("androidx.compose.material:material-icons-extended")
+    implementation("io.coil-kt:coil-compose:2.3.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

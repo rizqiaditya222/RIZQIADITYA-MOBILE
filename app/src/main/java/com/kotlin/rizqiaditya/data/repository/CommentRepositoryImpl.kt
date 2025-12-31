@@ -3,12 +3,10 @@ package com.kotlin.rizqiaditya.data.repository
 import com.kotlin.rizqiaditya.data.remote.api.CommentApi
 import com.kotlin.rizqiaditya.domain.model.Comment
 import com.kotlin.rizqiaditya.domain.repository.CommentRepository
-import javax.inject.Inject
 import com.kotlin.rizqiaditya.data.mapper.toDomain
 import com.kotlin.rizqiaditya.data.remote.dto.comment.CommentRequestDto
 
-
-class CommentRepositoryImpl @Inject constructor(
+class CommentRepositoryImpl constructor(
     private val commentApi: CommentApi
 ) : CommentRepository {
     override suspend fun getAllComments(): List<Comment> {

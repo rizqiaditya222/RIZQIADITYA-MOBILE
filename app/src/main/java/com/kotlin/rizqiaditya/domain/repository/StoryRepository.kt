@@ -9,7 +9,7 @@ interface StoryRepository {
     suspend fun  createStory(
         photo: File,
         caption: String,
-        location: String,
+        location: String
     ): Story
 
     suspend fun getStoriesArchive(): Story?

@@ -13,7 +13,8 @@ interface ProjectRepository {
         title: String,
         githubReposJson: String?,
         deploymentUrl: String?,
-        techStackJson: String
+        techStackJson: String,
+        description: String?
     ): Project
 
     suspend fun editProject(
@@ -22,7 +23,8 @@ interface ProjectRepository {
         title: String?,
         githubReposJson: String?,
         deploymentUrl: String?,
-        techStackJson: String?
+        techStackJson: String?,
+        description: String?
     ): Project
 
     suspend fun deleteProject(id: String)

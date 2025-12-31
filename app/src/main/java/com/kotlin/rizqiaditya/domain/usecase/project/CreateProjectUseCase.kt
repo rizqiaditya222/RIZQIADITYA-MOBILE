@@ -3,9 +3,8 @@ package com.kotlin.rizqiaditya.domain.usecase.project
 import com.kotlin.rizqiaditya.domain.model.Project
 import com.kotlin.rizqiaditya.domain.repository.ProjectRepository
 import java.io.File
-import javax.inject.Inject
 
-class CreateProjectUseCase @Inject constructor(
+class CreateProjectUseCase(
     private val repository: ProjectRepository
 ) {
     suspend operator fun invoke(
@@ -13,14 +12,16 @@ class CreateProjectUseCase @Inject constructor(
         title: String,
         githubReposJson: String?,
         deploymentUrl: String?,
-        techStackJson: String
+        techStackJson: String,
+        description: String?
     ): Project {
         return repository.createProject(
             photo = photo,
             title = title,
             githubReposJson = githubReposJson,
             deploymentUrl = deploymentUrl,
-            techStackJson = techStackJson
+            techStackJson = techStackJson,
+            description = description
         )
     }
 }
